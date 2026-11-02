@@ -180,13 +180,14 @@ def run(args):
         epochs=args.epochs, batch_size=args.batch_size,
         callbacks=callbacks, verbose=2
     )
-    pred = model.predict(x_test, verbose=0).reshape(-1)
-    pred = np.clip(pred, 0.0, args.max_rul if args.max_rul is not None else np.inf)
+     pred = model.predict(x_test, verbose=0).reshape(-1)
+pred = np.maximum(pred, 0.0)
 
-    if args.clip_test_targets and args.max_rul is not None:
-        y_eval = np.clip(y_test, 0.0, args.max_rul)
-    else:
-        y_eval = y_test
+if args.clip_test_targets and args.max_rul is not None:
+    pred = np.clip(pred, 0.0, args.max_rul)
+    y_eval = np.clip(y_test, 0.0, args.max_rul)
+else:
+    y_eval = y_test
 
     result = {
         "subset": args.subset, "seed": args.seed, "n_train_engines": len(train_ids),

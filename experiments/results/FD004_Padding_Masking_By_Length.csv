@@ -1,0 +1,5 @@
+Trajectory_Group,Model,Engines,MAE_exploratory,RMSE_exploratory
+Short trajectories (<30),Zero-padding LSTM,11,40.560184478759766,47.348460471111146
+Short trajectories (<30),Masking-aware LSTM,11,39.55663299560547,47.2781672408761
+Trajectories (>=30),Zero-padding LSTM,237,23.216384887695312,30.93915616621345
+Trajectories (>=30),Masking-aware LSTM,237,22.891252517700195,30.20524678915486

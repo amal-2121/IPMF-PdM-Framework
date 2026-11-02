@@ -1,0 +1,3 @@
+Model,Mean_prediction_across_engines_and_seeds,Prediction_SD_across_engines_and_seeds
+Masking-aware LSTM,174.80129103227094,43.52242559793891
+Zero-padding LSTM,181.64130424730706,45.5284938413543

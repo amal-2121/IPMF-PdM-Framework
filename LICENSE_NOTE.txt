@@ -1,0 +1,1 @@
+Original files are preserved in legacy_archive/original_repository. No new license is asserted for NASA data or third-party content. Add the project's intended open-source license only after confirming ownership and permissions.

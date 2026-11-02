@@ -194,7 +194,9 @@ else:
         "n_validation_engines": len(val_ids), "n_test_engines": len(test_units),
         "n_short_test_engines": int((test.groupby("unit_number").size() < args.seq_len).sum()),
         "seq_len": args.seq_len, "max_rul_cap": args.max_rul,
-         "test_target_clipped": bool(args.clip_test_targets),
+          "test_targets_and_predictions_clipped": bool(
+    args.clip_test_targets and args.max_rul is not None
+),
         "MAE": float(mean_absolute_error(y_eval, pred)),
         "RMSE": float(np.sqrt(mean_squared_error(y_eval, pred))),
         "NASA_score": nasa_score(y_eval, pred),
